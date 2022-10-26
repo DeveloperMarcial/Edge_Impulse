@@ -217,7 +217,7 @@
 #error "EI_CLASSIFIER_INPUT_WIDTH not compatiable with Spresense hardware accelerator.
 #endif
 
-#define DEBUG_NN  false             // Enable for very verbose logging from Edge Impulse SDK.
+#define DEBUG_IT  false             // Enable for very verbose logging from Edge Impulse SDK.
                                     // Show features from raw data during the Classify().
 #define GRAYSCALE false
 
@@ -609,7 +609,7 @@ void CamCB(CamImage img)
   // +-------------------------------------------+
   // | Classify the captured image.              |
   // +-------------------------------------------+
-  camera_classify(DEBUG_NN);
+  camera_classify(DEBUG_IT);
 
   // Print the Predictions.
   for (int ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++)
@@ -760,7 +760,7 @@ void setup()
   #endif
 
   // Kick-off the inferencing loop.
-  camera_start_continuous(DEBUG_NN); 
+  camera_start_continuous(DEBUG_IT); 
 }
 
 /*******************************************************************************************************************
