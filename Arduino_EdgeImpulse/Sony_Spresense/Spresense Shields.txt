@@ -1,0 +1,28 @@
+Help with the following sensors is at:
+https://developer.sony.com/develop/spresense/docs/sdk_tutorials_en.html
+
+Sony Spresense LTE Extension Board with Global SIM Card
+Product ID: 5432
+$99.95
+Spresense plugs into this board.
+Example of WiFi board and Camera board: https://github.com/sonydevworld/spresense/tree/master/examples/multi_webcamera
+https://www.adafruit.com/product/5432?gclid=EAIaIQobChMIsor-psz8-gIV5AznCh3ergTlEAQYASABEgLfLPD_BwE
+
+Wi-Fi Add-on Board for Sony SPRESENSE iS110B
+Product ID: 5155
+$54.95
+Plugs into Spresense board: https://idy-design.com/product/is110b_eng.html
+https://www.adafruit.com/product/5155
+
+Sensor Add-on Board for Sony Spresense EVK-701
+(acceleration, barometric pressure, geomagnetism)
+Product ID: 5156
+$54.95
+Plugs into Spresense board: https://docs.rs-online.com/c913/0900766b8171d98b.pdf
+https://www.adafruit.com/product/5156
+
+SENSORSHIELD-EVK-003
+Mouser # 755-SENSORSHLDEVK03
+(Accelerometer, Ambient Light Sensor and Proximity Sensor, Color, Hall, Magnetometer, Pressure, Temperature Sensor, Heart Rate, Shield for Arduino SHIELD-EVK-001)
+$156.74
+https://www.mouser.com/ProductDetail/ROHM-Semiconductor/SENSORSHIELD-EVK-003?qs=wUXugUrL1qz9s9mzyCT18w%3D%3D
