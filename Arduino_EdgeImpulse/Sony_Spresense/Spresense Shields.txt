@@ -1,6 +1,10 @@
 Help with the following sensors is at:
 https://developer.sony.com/develop/spresense/docs/sdk_tutorials_en.html
 
+This list is current as of 26-Oct-2022.
+
+There is a BLE module out there but the docs on what it actually is, is just dismal.
+
 Sony Spresense LTE Extension Board with Global SIM Card
 Product ID: 5432
 $99.95
