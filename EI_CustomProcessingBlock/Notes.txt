@@ -1,0 +1,62 @@
+*** PLEASE IGNORE THIS FILE ***
+These are my notes. 
+
+pip3 install -r requirements-blocks.txt
+sudo apt-get install python3-scipy
+pip install scipy
+
+cd /home/dadusb/LowPassFilter/EI_CustomProcessingBlock/
+python3 dsp-server.py
+
+http://localhost:44461
+
+ngrok http 44461
+
+
+Add custom block123
+
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html#scipy.signal.butter
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+ I created a down-n-dirty Custom Processing Block that executes a Lowpass filters and a Notch Filter  along with some summary statistics as Features. . The code is [here](https://github.com/DeveloperMarcial/EI_CustomProcessingBlock)
+
+Custom Processing Blocks
+https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/custom-blocks#5.-running-on-device
+
+Custom DSP Blocks (also explains cppType)
+https://www.youtube.com/watch?v=7vr4D_zlQTE
+
+Forum post about cppType
+https://forum.edgeimpulse.com/t/doubt-about-the-custom-preprocessing-block/4805
+
+C++ Library
+https://docs.edgeimpulse.com/docs/deployment/running-your-impulse-locally
+
+Running on a Desktop (handy for troubleshooting Custom Blocks)
+https://docs.edgeimpulse.com/docs/deployment/running-your-impulse-locally/running-your-impulse-locally
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Creating a Cutom Processing Block
+
+I want to add statistical metrics a Features. Features[] and Labels[] need to be the same length. 
+So I need to Label all the Processed Data and then I will add in my metrics.
+
+In dsp.py we can add Features and Labels like this:
+
+# We need to return a 1D array again, so flatten here again.
+		for f in fx:
+			features.append(f)
+            labels.append("PD") <-- Should this change for each Feature or can it stay "PD"?
+			
+		features.append(float(skew(fx)))
+        labels.append('Skewness')	
+++++++++++++++++++++++++++++++++++++++++++++++++++++		
+In the [Spectra Analysis Processing Block](https://github.com/edgeimpulse/processing-blocks/blob/master/spectral-analysis/dsp.py)
+the Critical Frequency is being normalized (Wn = cut_off_freq * 2 / freq_hz) before executing the Butterworth filter.
+
+Is this because the Data is also being Normalized (to the mean)?
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+

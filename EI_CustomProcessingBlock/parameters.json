@@ -1,0 +1,98 @@
+{
+    "version": 1,
+    "info": {
+        "title": "Butterworth Filter Implementation",
+        "author": "M. Marcial",
+        "description": "This Edge Impulse Custom Processing Block allows on to implemet a Low Pass Filter and a Notch Filter.",
+        "name": "Butterworth",
+        "cppType": "custom_butterworth_block",
+        "preferConvolution": false,
+        "visualization": "dimensionalityReduction",
+        "experimental": false,
+        "latestImplementationVersion": 1
+    },
+    "parameters": [
+                {
+            "group": "Filter",
+            "items": [
+				{
+                    "name": "Scale axes",
+                    "value": 1,
+                    "type": "float",
+                    "help": "Multiplies axes by this number",
+                    "param": "scale-axes"
+                },
+                {
+                    "name": "My Smooth It!!!",
+                    "value": false,
+                    "type": "boolean",
+                    "help": "Whether to smooth the data or not",
+                    "param": "smooth"
+                },
+                {
+                    "name": "Apply Low Pass Filter",
+                    "value": false,
+                    "type": "boolean",
+                    "help": "Whether to apply Lowpass filter or not",
+                    "param": "butterworth_doIt"
+                },
+                {
+                    "name": "Normalize Frequency",
+                    "value": false,
+                    "type": "boolean",
+                    "help": "Whether to normalize frequecny (Wn = cut_off_freq * 2 / freq_hz) before feeding the Butterworth filter.",
+                    "param": "normalizeHz_doIt"
+                },
+                {
+                    "name": "Order of the Filter",
+                    "value": 10,
+                    "type": "int",
+                    "help": "The critical frequency or frequencies.",
+                    "param": "orderOfFilter"
+                },
+                {
+                    "name": "Critical Frequency",
+                    "value": 3.6,
+                    "type": "float",
+                    "help": "The cutoff frequecny of the filter.",
+                    "param": "criticalFrequency"
+                },
+                {
+                    "name": "Sample Rate [Hz]",
+                    "value": 30,
+                    "type": "float",
+                    "help": "The sampling frequency of the digital system.",
+                    "param": "sampleRateHz"
+                },
+				{
+                    "name": "Apply Notch Filter",
+                    "value": false,
+                    "type": "boolean",
+                    "help": "Whether to apply Notch filter or not",
+                    "param": "notchFilter_doIt"
+                },
+                {
+                    "name": "Order of the Notch Filter",
+                    "value": 5,
+                    "type": "int",
+                    "help": "The critical frequency or frequencies.",
+                    "param": "orderOfNotchFilter"
+                },
+				{
+                    "name": "Lower Cutoff Frequency",
+                    "value": 2.123,
+                    "type": "float",
+                    "help": "The order of the filter.",
+                    "param": "lowerFrequency"
+                },
+                {
+                    "name": "Higher Cutoff Frequency",
+                    "value": 10.123,
+                    "type": "float",
+                    "help": "The order of the filter.",
+                    "param": "upperFrequency"
+                }
+		]
+        }
+    ]
+}
