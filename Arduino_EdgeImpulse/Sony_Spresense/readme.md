@@ -1,4 +1,4 @@
-Before trying to get an Edge Impulse model working in Arduino, I suggest running the official Edge Impulse Spresense Runner code found [here](https://github.com/edgeimpulse/firmware-sony-spresense). This will verifyyour Spresense if configured properly.
+Before trying to get an Edge Impulse model working in Arduino, I suggest running the official Edge Impulse Spresense Runner code found [here](https://github.com/edgeimpulse/firmware-sony-spresense). This will verifyyour Spresense if configured properly. If it doesn't work there, it ain't gonna work in the Arduino IDE.
 
 **Using Spresense with an Edge Impulse Runner via C Code**
 
