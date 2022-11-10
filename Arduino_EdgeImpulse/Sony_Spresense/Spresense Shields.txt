@@ -10,6 +10,7 @@ Product ID: 5432
 $99.95
 Spresense plugs into this board.
 Example of WiFi board and Camera board: https://github.com/sonydevworld/spresense/tree/master/examples/multi_webcamera
+Examples:  https://github.com/kamtom480/ITEADLIB_Arduino_WeeESP8266
 https://www.adafruit.com/product/5432?gclid=EAIaIQobChMIsor-psz8-gIV5AznCh3ergTlEAQYASABEgLfLPD_BwE
 
 Wi-Fi Add-on Board for Sony SPRESENSE iS110B
@@ -30,3 +31,6 @@ Mouser # 755-SENSORSHLDEVK03
 (Accelerometer, Ambient Light Sensor and Proximity Sensor, Color, Hall, Magnetometer, Pressure, Temperature Sensor, Heart Rate, Shield for Arduino SHIELD-EVK-001)
 $156.74
 https://www.mouser.com/ProductDetail/ROHM-Semiconductor/SENSORSHIELD-EVK-003?qs=wUXugUrL1qz9s9mzyCT18w%3D%3D
+
+Adafruit Freebies based on Order Amount:
+https://www.adafruit.com/free?gclid=Cj0KCQjwteOaBhDuARIsADBqRehA_aQDsJOfxaNenNcJOZ8rn7goiBqSXHfkZmIPf2o52tkKfUbgQCkaAttdEALw_wcB
