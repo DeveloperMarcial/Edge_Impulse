@@ -18,7 +18,12 @@ This photo show the [Sony Spresense Main Board - CXD5602](https://www.adafruit.c
 * The [chip](https://www.kionix.com/product/KX224-1053) that makes it work.
 
 
-The current *Sony Spresese Edge Impulse Firmware* is compatiable with the **Kx126** IMU.
+The current *Sony Spresese Edge Impulse Firmware* is compatiable with the **Kx126** IMU. The **Kx126** IMU plug in directly to the Spresense MCU board.
+
+**Kx126** IMU
+
+![image](https://user-images.githubusercontent.com/92460732/203925582-caeb6209-0707-43ea-94be-a81e7adab87c.png)
+
 
 To get the **Kx224** IMU working with *Edge Impulse Studio* execute the following:
 * Download the [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense).
