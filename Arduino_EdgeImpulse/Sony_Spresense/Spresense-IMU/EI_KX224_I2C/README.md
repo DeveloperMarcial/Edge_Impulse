@@ -26,8 +26,8 @@ The current *Sony Spresese Edge Impulse Firmware* is compatiable with the **Kx12
 
 
 To get the **Kx224** IMU working with *Edge Impulse Studio* execute the following:
-* Download the [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense).
-  * For these instructions the `root` folder is called `trunk`
+* Download the [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense) herin called *SSEI_Firmware*.
+  * For these instructions the `root` folder of the SSEI_Firmware is called `trunk`.
 * In the root folder modify `trunk/main.cpp`
   * `#include "KX126.h"                         // Where you see this...`
   * `#include "EI_KX224_I2C.h"                  // ...add this.`
@@ -40,13 +40,21 @@ To get the **Kx224** IMU working with *Edge Impulse Studio* execute the followin
 * Add these files to `trunk/libraries/KXxx`
   * EI_KX224_I2C.cpp
   * EI_KX224_I2C.h
+
+* If you have deployed an Edge Impulse C++ library with you custom motions, then copy the 3-folders in that library download overtop of the existing folders of the same name in the SSEI_Firmware.
+* The 3-folders to copy are:
+  * edge-impulse-sdk
+  * model-parameters
+  * tflite-model
+
 * Then following the instructions [here](https://github.com/edgeimpulse/firmware-sony-spresense), aka:
   * make -j
   * make flash
   * edge-impulse-daemon 
+
 Notes on installing the *Sony Spresese Edge Impulse Firmware* using *Ubuntu v22.04*:
 * The aforementioned *Edge Impulse Firmware* is [here](https://github.com/edgeimpulse/firmware-sony-spresense).
 * The `README.md` file states:
   * Install: `GNU ARM Embedded Toolchain 9-2019-q4-major - make sure arm-none-eabi-gcc is in your PATH`.
-    * Yes, yes, install this even though `9-2019-q4-major` is deprecated.
+    * Yes, yes, install this even though `9-2019-q4-major` *is deprecated*.
     * If you plow ahead and install the most recent toolchain, such as `arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz` the firmware will not compile.
