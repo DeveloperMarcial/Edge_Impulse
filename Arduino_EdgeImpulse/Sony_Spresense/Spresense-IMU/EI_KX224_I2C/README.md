@@ -46,8 +46,6 @@ To get the **KX224** IMU working with *Edge Impulse Studio* execute the followin
   * EI_KX224_I2C.cpp
   * EI_KX224_I2C.h
 
-<HR>
- 
 * If you have deployed an Edge Impulse C++ library with you custom motions, then copy the 3-folders in that library overtop of the existing folders of the same name in the SSEI_Firmware.
 * The 3-folders to copy are:
   * edge-impulse-sdk
@@ -59,6 +57,8 @@ To get the **KX224** IMU working with *Edge Impulse Studio* execute the followin
   * make flash
   * edge-impulse-daemon 
 
+<HR>
+ 
 Notes on installing the *Sony Spresese Edge Impulse Firmware* using *Ubuntu v22.04*:
 * The aforementioned *Edge Impulse Firmware* is [here](https://github.com/edgeimpulse/firmware-sony-spresense).
 * The `README.md` file states:
