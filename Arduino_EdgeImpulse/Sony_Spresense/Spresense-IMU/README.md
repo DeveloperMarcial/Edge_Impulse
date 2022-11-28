@@ -7,7 +7,7 @@
 
 **Edge Impulse Usage**
 * Folder `KX224_I2C` is for use with [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense).
-* See [this](https://github.com/DeveloperMarcial/Edge_Impulse/blob/trunk/Arduino_EdgeImpulse/Sony_Spresense/Spresense-IMU/EI_KX224_I2C/README.md) to hpw to mod the Edge Impulse Firmware.
+* See [this](https://github.com/DeveloperMarcial/Edge_Impulse/blob/trunk/Arduino_EdgeImpulse/Sony_Spresense/Spresense-IMU/EI_KX224_I2C/README.md) to see how to mod the Edge Impulse Firmware so it will operate with the KX224.
  
  <HR>
  
