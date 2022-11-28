@@ -22,14 +22,6 @@ This photo shows the [Sony Spresense Main Board - CXD5602](https://www.adafruit.
 
 <HR>
 
-The current *Sony Spresese Edge Impulse Firmware* is compatiable with the **KX126** IMU. The **KX126** IMU plug in directly to the Spresense MCU board. (The KX224 sensor board can plug into the KX126 as desired.)
-
-Photo of **KX126** IMU:
-
-![image](https://user-images.githubusercontent.com/92460732/203925582-caeb6209-0707-43ea-94be-a81e7adab87c.png)
-
-<HR>
-
 To get the **KX224** IMU working with *Edge Impulse Studio* execute the following:
 * Download the [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense) herin called *SSEI_Firmware*.
   * For these instructions the `root` folder of the SSEI_Firmware is called `trunk`.
@@ -56,6 +48,7 @@ To get the **KX224** IMU working with *Edge Impulse Studio* execute the followin
   * make -j
   * make flash
   * edge-impulse-daemon 
+  * Start recording new Samples in Edge Impulse Studio.
 
 <HR>
  
@@ -65,3 +58,11 @@ Notes on installing the *Sony Spresese Edge Impulse Firmware* using *Ubuntu v22.
   * Install: `GNU ARM Embedded Toolchain 9-2019-q4-major - make sure arm-none-eabi-gcc is in your PATH`.
     * Yes, yes, install this even though `9-2019-q4-major` *is deprecated*.
     * If you plow ahead and install the most recent toolchain, such as `arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz` the firmware will not compile.
+    
+<HR>
+
+The current *Sony Spresese Edge Impulse Firmware* is compatiable with the **KX126** IMU. The **KX126** IMU plug in directly to the Spresense MCU board. (The KX224 sensor board can plug into the KX126 as desired.)
+
+Photo of **KX126** IMU:
+
+![image](https://user-images.githubusercontent.com/92460732/203925582-caeb6209-0707-43ea-94be-a81e7adab87c.png)
