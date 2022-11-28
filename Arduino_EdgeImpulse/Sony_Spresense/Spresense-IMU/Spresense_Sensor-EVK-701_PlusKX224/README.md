@@ -19,3 +19,5 @@ The following libraries will be required:
 * KX224_I2C.h
 * BM1383AGLV.h
 * BM1422AGMV.h
+
+The manufacturer of theese sensors called Rohm has an Arduino library [here](https://github.com/RohmSemiconductor/Arduino).
