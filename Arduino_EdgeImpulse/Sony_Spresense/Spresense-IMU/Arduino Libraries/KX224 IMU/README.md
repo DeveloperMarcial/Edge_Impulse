@@ -3,10 +3,12 @@
 
 ![image](https://user-images.githubusercontent.com/92460732/203920280-c92e735e-c343-4eea-b6d7-780928885a2d.png)
 
+The manufacturer of the KX224 called Rohm has an Arduino library [here](https://github.com/RohmSemiconductor/Arduino/tree/master/KX224).
+
 <HR>
 
 **Edge Impulse Usage**
-* Folder `KX224_I2C` is for use with [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense).
+* Folder `EI_KX224_I2C` is for use with [Sony Spresese Edge Impulse Firmware](https://github.com/edgeimpulse/firmware-sony-spresense).
 * See [this](https://github.com/DeveloperMarcial/Edge_Impulse/blob/trunk/Arduino_EdgeImpulse/Sony_Spresense/Spresense-IMU/EI_KX224_I2C/README.md) to see how to mod the Edge Impulse Firmware so it will operate with the KX224.
  
  <HR>
