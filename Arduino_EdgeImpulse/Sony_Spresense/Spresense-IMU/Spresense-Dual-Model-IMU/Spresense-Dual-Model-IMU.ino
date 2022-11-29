@@ -57,7 +57,7 @@
 #ifdef IMU_126
 // To prove this code runs with the KX126 on the MainCore
 // rem the following statement to run just the MainCore with KX126 IMU.
-//#define BOOT_SUBCORE1
+#define BOOT_SUBCORE1
 #endif
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -82,8 +82,15 @@
 
 /* Includes ---------------------------------------------------------------- */
 #include <Tutorial_Continuous_motion_recognition__no_mods__inferencing.h> // <-- Change to your deployed Edge Impulse Arduino library.
-#include <Wire.h>                                     // I2C.
+
+#include <Wire.h>                                     // I2C: Bus0. SCL=D15, SDA=D14.
+                                                      // I2C: Bus1. SCL=D09, SDA=D03.
+
 #include <MP.h>                                       // Spresense multi-core intercomm.
+#include <MPMutex.h>
+
+/* Create a MPMutex object */
+MPMutex mutex(MP_MUTEX_ID0);
 
 #ifdef IMU_126
 #include <KX126.h>                                    // 3-axis IMU.
@@ -117,16 +124,6 @@ KX224 KX224(KX224_DEVICE_ADDRESS_1E);                 // 3-axis IMU from KX224.
 #define CONVERT_G_TO_MS2    9.80665f
 #define ACC_SAMPLE_TIME_MS  0.49922f
 #define FLASH_WRITE_TIME_MS 5.288f
-
-/* Define pins ------------------------------------------------------------ */
-const int pinOutMainCoreIsUsingI2C    = PIN_D00;  // Output.
-const int pinInSubCoreCheckIsI2CFree  = PIN_D01;  // Input.
-
-const int pinOutSubCoreIsUsingI2C     = PIN_D02;  // Output.
-const int pinInMainCoreCheckIsI2CFree = PIN_D03;  // Input.
-
-const int pinOutWaitForKX224ToInit    = PIN_D04;  // Output.
-const int pinInWaitForKX224ToInit     = PIN_D05;  // Output.
 
 /* Global variables ------------------------------------------------------- */
 static int      acc_sample_count = 0;                         // Used as an index into acc_buf[].
@@ -204,24 +201,12 @@ int ei_inertial_read_data(void)
 int spresense_getAcc(float acc_val[3])
 {
     #ifdef IMU_126
-    while(HIGH==digitalRead(pinInMainCoreCheckIsI2CFree))
-    {
-      // Wait for SubCore to finish using I2C bus.
-    }
-    digitalWrite(pinOutMainCoreIsUsingI2C,HIGH);
     int returnVal = KX126.get_val(acc_val);
-    digitalWrite(pinOutMainCoreIsUsingI2C,LOW);
     return returnVal;
     #endif
 
     #ifdef IMU_224
-    while(HIGH==digitalRead(pinInSubCoreCheckIsI2CFree))
-    {
-      // Wait for MainCore to finish using I2C bus.
-    }
-    digitalWrite(pinOutSubCoreIsUsingI2C,HIGH);
     int returnVal = KX224.get_val(acc_val);
-    digitalWrite(pinOutSubCoreIsUsingI2C,LOW);
     return returnVal;
     #endif
 }
@@ -250,20 +235,6 @@ static bool acc_data_callback(const void *sample_buf, uint32_t byteLength)
  */
 void setup()
 {
-  // Setup hardware handshaking for I2C bus usage.  
-  pinMode(pinOutMainCoreIsUsingI2C,    OUTPUT); // The MainCore sets this pin HIGH while it is using the I2C bus.
-  pinMode(pinInSubCoreCheckIsI2CFree,  INPUT);  // This input must be low before the SubCore uses the IC2.
-
-  pinMode(pinOutSubCoreIsUsingI2C,     OUTPUT); // The SubCore sets this pin HIGH while it is using the I2C bus.
-  pinMode(pinInMainCoreCheckIsI2CFree, INPUT);  // This input must be low before the MainCore uses the IC2.
-
-  pinMode(pinOutWaitForKX224ToInit,    OUTPUT);
-  pinMode(pinInWaitForKX224ToInit,     INPUT);
-  
-  digitalWrite(pinOutMainCoreIsUsingI2C,HIGH);
-  digitalWrite(pinOutSubCoreIsUsingI2C, LOW);
-  digitalWrite(pinOutWaitForKX224ToInit,LOW);
-
   Serial.begin(115200);
   while (!Serial);
 
@@ -299,17 +270,14 @@ void setup()
   ei_printf("%s\tNo. of classes: %d\n", coreName, sizeof(ei_classifier_inferencing_categories) / sizeof(ei_classifier_inferencing_categories[0]));
 
   // Begin I2C bus.
+  #ifdef IMU_126
   Wire.begin();
+  #else
+  Wire1.begin();
+  #endif
   
   byte rc;
   #ifdef IMU_126
-  while(HIGH==digitalRead(pinInMainCoreCheckIsI2CFree))
-  {
-    // Wait for SubCore to finish using I2C bus.  
-    //ei_printf("%sMainCore is waiting for SubCore to finish using I2C bus before it can initialize the KX126. pinInMainCoreCheckIsI2CFree=%d..\r\n", coreName, digitalRead(pinInMainCoreCheckIsI2CFree));  
-  }
-
-  digitalWrite(pinOutMainCoreIsUsingI2C,HIGH);
   // Initialize 3-axis IMU from KX126.
   ei_printf("%sKX126 initialization about to begin...\r\n", coreName);
   rc = KX126.init();
@@ -319,19 +287,9 @@ void setup()
     return;
   }
   ei_printf("%sKX126 initialization about to begin...Done!\r\n", coreName);
-  digitalWrite(pinOutMainCoreIsUsingI2C,LOW);
   #endif
 
   #ifdef IMU_224
-  while(HIGH==digitalRead(pinInSubCoreCheckIsI2CFree))
-  {
-    // Wait for MainCore to finish using I2C bus.
-    ///ei_printf("%sSubCore is waiting for MainCore to finish using I2C bus before it can initialize the KX224. pinInSubCoreCheckIsI2CFree=%d..\r\n", coreName, digitalRead(pinInSubCoreCheckIsI2CFree));
-  }
-  ///ei_printf("%sSubCore is waiting for MainCore to finish using I2C bus before it can initialize the KX224...Done!\r\n", coreName);
-  
-  digitalWrite(pinOutSubCoreIsUsingI2C,HIGH); 
-  rc = 1;
   // Initialize 3-axis IMU from KX224.
   ei_printf("%sKX224 initialization about to begin...\r\n", coreName);
   rc = KX224.init();
@@ -340,44 +298,42 @@ void setup()
     ei_printf("%sKX224 initialization failed...\r\n", coreName);
   }
   ei_printf("%sKX224 initialization finished...\r\n", coreName);
-  digitalWrite(pinOutSubCoreIsUsingI2C,LOW);
   #endif
 
   ei_inertial_sample_start(&acc_data_callback, EI_CLASSIFIER_INTERVAL_MS);
 
-  #ifdef IMU_224
-  digitalWrite(pinOutWaitForKX224ToInit,HIGH);
-  #endif
-
-  #ifdef BOOT_SUBCORE1
-  #ifdef IMU_126
-  while(LOW==digitalRead(pinInWaitForKX224ToInit))
-  {
-    // Wait for SubCore to initialize KX224.
-  }
-  #endif
-  #endif
 
   ei_printf("%sStarting inferencing...\r\n", coreName);
 }
 
-//                                                          125 / 3 = 41.6 ==> 1857ms sample collection time.
-//static const int sampleCount = EI_CLASSIFIER_RAW_SAMPLE_COUNT / EI_CLASSIFIER_RAW_SAMPLES_PER_FRAME;
-static const int sampleCount = 45;  // 45 ==> 2038ms sample collection time.
-                                    // This gives us a value just larger than the Impulse Window Size value of 2000ms.
-                                    // However, acc_sample_count only counts up to 45*3 (=135).
-                                    // Therefore, acc_buf gets filled up to index acc_buf[0:135] not acc_buf[0:375]
 /**
  * @brief      Arduino main function
  */
 void loop()
 {
-    /* Run sampler */
+    /* Busy wait until lock the mutex */
+    int ret = 0;
+    do
+    {
+      ret = mutex.Trylock();
+    } while (ret != 0);
+
+    /* Run Sampler */
+    // Note: To get this sampler loop to operate correctly "ei_inertial_sample_start()" was modified."
+    // Symptom:
+    //    Line: for(int i = 0; i < EI_CLASSIFIER_RAW_SAMPLE_COUNT; i++)
+    //    The EI Firmware code had this line but it creates a 6 second sample collection period.
+    // The Firmware did:
+    //    samplerate_divider  =  (int)(sample_interval_ms / ACC_SAMPLE_TIME_MS);  // 16 / 0.49922f = 32.04999. <--Code from Firmware.
+    //    samplerate_divider += ((int) sample_interval_ms);                       // 32.04999 + 16 = 48.04999. <--Code from Firmware.
+    // This was changed to the following
+    //    samplerate_divider  = ((int) sample_interval_ms);                      // Yields a 1888ms sample collection time in loop().
+    // Note: The for-loop must count up to EI_CLASSIFIER_RAW_SAMPLE_COUNT so that the acc_buf[] gets filled completely.
+    //       If acc_buf[] is not filled completely, then inferencing will be wrong.
     ei_printf("%sSampling...\r\n", coreName);
     acc_sample_count = 0;    
     uint32_t startTime = millis();
-    for(int i = 0; i < EI_CLASSIFIER_RAW_SAMPLE_COUNT; i++) // The EI Firmware code had this line but it creates a 6 second sample collection period.
-  //for(int i = 0; i < sampleCount;                    i++) // 45 creates a 2038ms sample collection time but does not fill acc_buf[] so inferencing will be wrong.
+    for(int i = 0; i < EI_CLASSIFIER_RAW_SAMPLE_COUNT; i++)
     {
       if(ei_inertial_read_data())
       {
@@ -389,6 +345,9 @@ void loop()
     uint32_t endTime = millis() - startTime;
     ei_printf("%sSampling...Done in %d ms!\r\n", coreName, endTime);
 
+    /* Unlock the mutex */
+    mutex.Unlock();    
+    
     //
     // Create a data structure to represent this Window of data.
     //
@@ -420,10 +379,4 @@ void loop()
         ei_printf("%s    %s: %.5f\r\n", coreName, result.classification[ix].label, result.classification[ix].value);
     }
     ei_printf("%s    anomaly score: %.3f\r\n", coreName, result.anomaly);
-
-    #ifdef IMU_126
-    delay(1000);
-    #else
-    delay(1000);
-    #endif
 }
