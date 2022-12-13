@@ -18,7 +18,7 @@
     * Therefore, in TNN when prompted for `LoRaVersion`, select `LoRaWAN Specification 1.0.3`.
     * The `Regional Parameters Version` should then automatically populate with `RP001 Regional Parameters 1.0.3 revison A`.
   * Getting Started: https://www.thethingsindustries.com/docs/getting-started/ 
-  * Create a free TTN account: https://console.cloud.thethings.network/ 
+  * Create a free *TTN* account: https://console.cloud.thethings.network/ 
   * Setup Device: https://www.thethingsindustries.com/docs/gateways/models/thethingsindoorgateway/ 
   * Create an app: https://nam1.cloud.thethings.network/console/applications 
   * 2 layers of cryptography mean network operator cannot understand the user’s payload:
@@ -26,8 +26,8 @@
     * A unique 128-bit Application Session Key (AppSKey) shared end-to-end at the application level.
   * NOTE: Single-channel packet forwarders no longer work after the Things Network migration to The Things Stack v3. For more information about this decision, visit: https://www.thethingsnetwork.org/forum/t/single-channel-packet-forwarders-scpf-are-deprecated-and-not-supported/31117
 
-**Creating Your Gateway EUI**
-* The Gateway EUI is used by TTN.
+**Creating Your Gateway EUI ID**
+* The Gateway EUI is used by *TTN*.
 ![image](https://user-images.githubusercontent.com/92460732/207217816-3bf29c56-3eee-4a76-ad84-1694ead71d01.png)
 
 **Gateway Setup**
