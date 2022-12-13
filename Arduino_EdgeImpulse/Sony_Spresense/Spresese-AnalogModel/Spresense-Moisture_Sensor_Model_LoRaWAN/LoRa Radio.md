@@ -1,5 +1,6 @@
 **RFM95W LoRa Radio**
 * Product: Adafruit RFM95W LoRa Radio Transceiver Breakout - 868 or 915 MHz - RadioFruit
+  * Note: The board has silkscreen showing "RFM9x LoRa Radio".
 * Product ID: 3072
 * Cost: $19.95
 * Quantity: 2
