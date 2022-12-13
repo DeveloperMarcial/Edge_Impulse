@@ -4,14 +4,18 @@
 * Cost: $19.95
 * Quantity: 2
 * Order here: https://www.adafruit.com/product/3072
+* Assembly: https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts/assembly 
+![image](https://user-images.githubusercontent.com/92460732/207215425-f6505c82-8be8-4bd5-adcf-6d4e780a9951.png)
+
 
 Connect an external antenna directly to the board.
 * $2.50, also include 1 x Edge-Launch SMA Connector for 1.6mm / 0.062" Thick PCBs
 
 Connect external antenna to your enclosure
 * $0.75, also include 1 x uFL SMT Antenna Connector
-* SMA to uFL/u.FL/IPX/IPEX RF Adapter Cable
-* RP-SMA to uFL/u.FL/IPX/IPEX RF Adapter Cable
+* Will need an adapter cable:
+  * SMA to uFL/u.FL/IPX/IPEX RF Adapter Cable, or
+  * RP-SMA to uFL/u.FL/IPX/IPEX RF Adapter Cable
 
 * Use a ¼ wave whip antenna (a wire dipole, aka a piece of wire)
 433 MHz - 6.5 inches, or 16.5 cm
