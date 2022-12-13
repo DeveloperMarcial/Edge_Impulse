@@ -28,6 +28,9 @@
 
 **Creating Your Gateway EUI ID**
 * The Gateway EUI is used by *TTN* to register your Gateway so that you *TTN* Console can talk with your Gateway.
+* To register you Gateway you need a
+  * Gateway EUI, and the
+  * WiFi Password of your Gateway.
 ![image](https://user-images.githubusercontent.com/92460732/207217816-3bf29c56-3eee-4a76-ad84-1694ead71d01.png)
 
 **Gateway Setup**
