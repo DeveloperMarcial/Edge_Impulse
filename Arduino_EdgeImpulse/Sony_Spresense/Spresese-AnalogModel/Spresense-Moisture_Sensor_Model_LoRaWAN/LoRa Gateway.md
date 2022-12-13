@@ -9,7 +9,7 @@
 **Additional Info:**
 * It lets you bridge LoRa wireless network to an IP network via WiFi.
 * Simply converts RF packets to IP packets and vice versa.
-* Needed for communicating with RFM95W LoRa Radio from a desktop computer or cloud server such as a TTN server.
+* Needed for communicating with RFM9x LoRa Radio from a desktop computer or cloud server such as a TTN server.
 * Operates at 902–928MHz and has a 2-prong 120V plug for use in the US.
 * Built-in omni directional antenna.
   * The internal antenna is connected via a uFL connector so one could litterally hack the case and connect an external antenna.
