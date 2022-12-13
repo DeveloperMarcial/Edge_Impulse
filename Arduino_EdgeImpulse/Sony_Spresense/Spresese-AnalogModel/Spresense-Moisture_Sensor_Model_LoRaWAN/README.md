@@ -10,7 +10,7 @@ This project reads the analog voltage of a moisture sensor. A machine learning (
 | ------------------------------------------- | ------------------------------------------- |
 | LoRa Gateway.md                             | Info on the LoRa gateway used in this project.|
 | LoRa Radio.md                               | Info on the LoRa radio used in this project.|
-| LoRa Radio Wiring.pdf                       | Shows how to wire the LoRa radio board into the Sony Spresense Main board, or Sony Spresense Carrier board or an Arduino Mega.| 
+| LoRa Radio Wiring.pdf                       | Shows how to wire the LoRa radio board into the Sony Spresense Main board, or Sony Spresense Carrier board or an Arduino Mega. (Note: The Mega cannot run the ML model library.)| 
 | LoRaWAN.drawio                              | A block diagram of the project. (Open with http://draw.io/)|
 | README.md                                   | This file. |
 | Spresense-Moisture_Sensor_Model_LoRaWAN.ino | The Arduino file |
