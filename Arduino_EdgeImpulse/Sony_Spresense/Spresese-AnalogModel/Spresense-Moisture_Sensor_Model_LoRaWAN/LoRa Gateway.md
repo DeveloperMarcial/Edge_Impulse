@@ -46,6 +46,7 @@
   * GRN ⇒ connecting to WiFi
   * GRN/RED ⇒ Fetching config, downloading any updates
     * Takes 5-10 minutes
+ * The goto your [TTN Colsole](https://www.thethingsnetwork.org/) and register your Gateway.
 
 Additional Info:
   * https://www.thethingsnetwork.org/map 
