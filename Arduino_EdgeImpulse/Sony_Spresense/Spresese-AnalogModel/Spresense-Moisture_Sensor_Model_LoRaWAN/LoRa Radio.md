@@ -50,7 +50,7 @@ Connect external antenna to your enclosure
 * +5 to +20 dBm up to 100 mW Power Output Capability (power output selectable in software)
 * ~100mA peak during +20dBm transmit, ~30mA during active radio listening.
   * See this [SuperCap](https://store.mcci.com/collections/iot-building-blocks/products/model-4906) for boosting power during x-missions.
-  * The SuperCap is has a [Feather](https://www.adafruit.com/category/943) form factor. See [this](https://github.com/adafruit/awesome-feather/blob/main/README.md) as well.
+  * The SuperCap has a [Feather](https://www.adafruit.com/category/943) form factor. See [this](https://github.com/adafruit/awesome-feather/blob/main/README.md) as well.
 * The RFM9x radios have a range of approx. 2 km line of sight with tuned uni-directional antennas. Depending on obstructions, frequency, antenna and power output, you will get lower ranges - especially if you are not in line of sight.
 * The radios must use the same encoding schemes. For example, a 900 MHz RFM69 packet radio will not talk to a 900 MHz RFM9x LoRa radio.
 * 900 MHz can be tuned from about 850-950MHz with good performance.
