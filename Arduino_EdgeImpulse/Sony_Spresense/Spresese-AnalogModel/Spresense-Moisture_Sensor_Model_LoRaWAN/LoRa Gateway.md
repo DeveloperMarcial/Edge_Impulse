@@ -14,6 +14,9 @@
 * Built-in omni directional antenna.
   * The internal antenna is connected via a uFL connector so one could litterally hack the case and connect an external antenna.
 * To learn more and sign up, see The Things Network.: https://www.thethingsindustries.com/docs/getting-started/ttn/ 
+  * *NOTE: The Adruino LMiC library has only been tested with LoRaWAN 1.0.2/1.03 networks and does not have the separated key structure defined by LoRaWAN 1.1.*
+    * Therefore, in TNN when prompted for `LoRaVersion`, select `LoRaWAN Specification 1.0.3`.
+    * The `Regional Parameters Version` should then automatically populate with `RP001 Regional Parameters 1.0.3 revison A`.
   * Getting Started: https://www.thethingsindustries.com/docs/getting-started/ 
   * Create a free TTN account: https://console.cloud.thethings.network/ 
   * Setup Device: https://www.thethingsindustries.com/docs/gateways/models/thethingsindoorgateway/ 
@@ -27,3 +30,21 @@
 * The Gateway EUI is used by TTN.
 ![image](https://user-images.githubusercontent.com/92460732/207217816-3bf29c56-3eee-4a76-ad84-1694ead71d01.png)
 
+**Gateway Setup**
+* Plug in Gateway
+* Hold RESET button 5s
+  * GRN/RED (repeats)
+* Hold SETUP button for 10s
+  * RED
+* Connect to WiFi AP with SSID: MiniHub-80409B
+* Browse to 192.168.4.1.
+* Configure settings as desire
+* Save
+  * GRN ⇒ connecting to WiFi
+  * GRN/RED ⇒ Fetching config, downloading any updates
+    * Takes 5-10 minutes
+
+Additional Info:
+  * https://www.thethingsnetwork.org/map 
+  * https://ttnmapper.org/heatmap/ 
+  * https://account.thethingsnetwork.org/users/login 
