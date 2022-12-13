@@ -50,5 +50,4 @@
 
 Additional Info:
   * https://www.thethingsnetwork.org/map 
-  * https://ttnmapper.org/heatmap/ 
-  * https://account.thethingsnetwork.org/users/login 
+  * https://ttnmapper.org/heatmap/
