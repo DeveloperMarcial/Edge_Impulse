@@ -19,9 +19,9 @@ Connect external antenna to your enclosure
   * RP-SMA to uFL/u.FL/IPX/IPEX RF Adapter Cable
 
 * Use a ¼ wave whip antenna (a wire dipole, aka a piece of wire)
-433 MHz - 6.5 inches, or 16.5 cm
-868 MHz - 3.25 inches or 8.2 cm
-915 MHz - 3 inches or 7.8 cm
+  * 433 MHz - 6.5 inches, or 16.5 cm
+  * 868 MHz - 3.25 inches or 8.2 cm
+  * 915 MHz - 3 inches or 7.8 cm
 
 * Antenna Length Calculator:
 
