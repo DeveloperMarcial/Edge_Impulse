@@ -9,5 +9,6 @@ This project reads the analog voltage of a moisture sensor. A machine learning m
 | YourTTN_IDsAndKeys.h                        | Edit this file with your "The Things Network" private DeviceID, JoinID or AppID, and API Key.|
 | ei-soil-moisture-with-lora-arduino-1.0.3.zip| The Edge Impulse created Machine Learning model.| 
 
-![image](https://user-images.githubusercontent.com/92460732/207221802-a3386302-7ae3-4bad-8b87-de045e01f95d.png)
+![image](https://user-images.githubusercontent.com/92460732/207224619-3d6c33f8-2ee5-4db0-bd2e-2a648fe3ecfc.png)
+
 
