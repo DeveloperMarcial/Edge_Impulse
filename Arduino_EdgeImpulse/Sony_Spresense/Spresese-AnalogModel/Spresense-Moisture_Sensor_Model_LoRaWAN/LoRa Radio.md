@@ -3,7 +3,7 @@
   * Note: The board has silkscreen showing "RFM9x LoRa Radio".
 * Product ID: 3072
 * Cost: $19.95
-* Quantity: 2
+* Quantity: 1
 * Order here: https://www.adafruit.com/product/3072
 * Assembly: https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts/assembly 
 ![image](https://user-images.githubusercontent.com/92460732/207215425-f6505c82-8be8-4bd5-adcf-6d4e780a9951.png)
