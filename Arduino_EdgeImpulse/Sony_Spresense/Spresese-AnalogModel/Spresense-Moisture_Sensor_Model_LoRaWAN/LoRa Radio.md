@@ -34,6 +34,7 @@ Connect external antenna to your enclosure
 |3.225|1/4 wave [inch]|
 
 **My Transmission Tests**
+* I soldered a piece of wire 3.2" long into the *RFM95W LoRa Radio* board antenna thru hole.
 * I was able to get about 1 km duplex communication between
   * [RFM95W LoRa Radio](https://www.adafruit.com/product/3072) to another *RFM95W LoRa Radio*
   * *RFM95W LoRa Radio* to a LoRaWAN [gateway](https://www.adafruit.com/product/4345) with built-in omni directional antenna.
