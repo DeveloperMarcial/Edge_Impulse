@@ -27,7 +27,7 @@
   * NOTE: Single-channel packet forwarders no longer work after the Things Network migration to The Things Stack v3. For more information about this decision, visit: https://www.thethingsnetwork.org/forum/t/single-channel-packet-forwarders-scpf-are-deprecated-and-not-supported/31117
 
 **Creating Your Gateway EUI ID**
-* The Gateway EUI is used by *TTN*.
+* The Gateway EUI is used by *TTN* to register you Gateway so that *TTN* will talk with your Gateway.
 ![image](https://user-images.githubusercontent.com/92460732/207217816-3bf29c56-3eee-4a76-ad84-1694ead71d01.png)
 
 **Gateway Setup**
