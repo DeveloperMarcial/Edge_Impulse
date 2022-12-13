@@ -22,8 +22,7 @@ Connect external antenna to your enclosure
   * 433 MHz - 6.5 inches, or 16.5 cm
   * 868 MHz - 3.25 inches or 8.2 cm
   * 915 MHz - 3 inches or 7.8 cm
-
-* Antenna Length Calculator:
+  * Antenna Length Calculator:
 
 | Value | Units |
 | ------| ----- |
