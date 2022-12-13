@@ -42,7 +42,7 @@ Connect external antenna to your enclosure
 **Additional Info:**
 * Wires into Spresense board via SPI4 or Spresense Extension Board via SPI5.
 * Need 2 radio boards for point-to-point long range tests.
-* These are +20dBm LoRa packet radios that have a special radio modulation that is not compatible with the RFM69s but can go much much farther. They can easily go 2 km line of sight using simple wire antennas, or up to 20Km with directional antennas and settings tweakings.
+* These are +20dBm LoRa packet radios that have a special radio modulation that is _not compatible with the RFM69s_ but can go much much farther. They can easily go 2 km line of sight using simple wire antennas, or up to 20Km with directional antennas and settings tweakings.
 * The chip on the radio board is a SX1276 LoRa® based module with SPI interface:
   * https://www.semtech.com/products/wireless-rf/lora-connect/sx1276
 * SX1276 chip datasheet:
