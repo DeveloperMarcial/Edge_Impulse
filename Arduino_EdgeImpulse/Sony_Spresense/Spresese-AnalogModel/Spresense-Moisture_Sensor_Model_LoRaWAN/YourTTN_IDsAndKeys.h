@@ -37,9 +37,8 @@
 // The following AppEUI was derived from the MAC address of the attatched LoRa radio board:
 //  MAC Addy:                 A1:   B2:   C3:               D4:   E5:   F6
 //  Derived AppEUI:           A1:   B2:   C3:   FF:   FE:   D4:   E5:   F6
-//  Derived AppEUI:           A1    B2    C3    FF    FE    D4    E5    F6 
+//  Derived AppEUI:           A1    B2    C3    FF    FE    D4    E5    F6 <--  <-- <-- Enter this in to the TTN JoinEUI textbox <-- <-- <--
 //  AppEUI (little endian): 0xF6, 0xE5, 0xD4, 0xfe, 0xff, 0xC3, 0xB2, 0xA1
-//  Copy to TTN JoinEUI text box: F6 E5 D4 fe ff C3 B2 A1                    <--  <-- <-- Enter this in to the TTN <-- <-- <--
 static const u1_t PROGMEM APPEUI[8]={ 0xF6, 0xE5, 0xD4, 0xFE, 0xFF, 0xC3, 0xB2, 0xA1 };
 
 void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}      // The implementation of this callback function has to provide the application EUI and
