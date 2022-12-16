@@ -1,4 +1,4 @@
-As of 15-Dec-2022 this folder has not been released yet.
+An example senerio for this app would be to monitor soil moisture at various locations in a cherry orchard were power and internet connectivity is not avaliable.
 
 This program is targeted to the Sony Spresense using the [Arduino](https://www.arduino.cc/) IDE for compilation. There are different INO files to make it easy to adpat this program for other uses. For example, if you don't want to use LoRaWAN, the delete files `Spresense-LMiC.h` and `Spresense-LMiC.ino` from the Arduino build folder.
 
@@ -32,3 +32,8 @@ This project uses the follwoing hardware:
 |TTN_IDsAndKeys.h|This file holds my personal AppEUI or JoinEUI, DEVEUI and App API key. This file should noty exist in this GitHub repository.|
 |YourTTN_IDsAndKeys.h|This file holds your personal AppEUI or JoinEUI, DEVEUI and App API key. Modify this file with your TTN EUIs and key.|
 |ei-soil-moisture-with-lora-arduino-1.0.3.zip|The Arduino custom machine learning model delpoyed from the [Edge Impulse Studio](https://www.edgeimpulse.com/).|
+
+TODO:
+
+Put the Spresense into low power or sleep mode, waking up once an hour to x-mit a new value over LoRa.
+Depending on what enclosure is selected and what battery is selected consider using a SuperCap for added amps needed during a LoRa x-mission
