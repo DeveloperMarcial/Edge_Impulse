@@ -1,11 +1,11 @@
 An example senerio for this app would be to monitor soil moisture at various locations in a cherry orchard were power and internet connectivity is not avaliable.
 
-This program is targeted to the Sony Spresense using the [Arduino](https://www.arduino.cc/) IDE for compilation. There are different INO files to make it easy to adpat this program for other uses. For example, if you don't want to use LoRaWAN, the delete files `Spresense-LMiC.h` and `Spresense-LMiC.ino` from the Arduino build folder.
+This program is targeted to the Sony Spresense using the [Arduino](https://www.arduino.cc/) IDE for compilation. There are different INO files to make it easy to adapt this program for other uses. For example, if you don't want to use LoRaWAN, the delete files `Spresense-LMiC.h` and `Spresense-LMiC.ino` from the Arduino build folder.
 
-This project uses the follwoing hardware:
+This project uses the following hardware:
 * [Sony Spresense](https://developer.sony.com/develop/spresense/) (has built-in GNSS module).
 * Seeed Studio [moisture gauge](https://www.seeedstudio.com/Grove-Moisture-Sensor.html).
-* Seeed Studio WIO Terminal (for displaying status when out roaming about).
+* Seeed Studio [WIO Terminal](https://www.seeedstudio.com/Wio-Terminal-p-4509.html) (for displaying status when out roaming about).
 * Adafruit [LoRa radio board](https://www.adafruit.com/product/3072).
 * The Things Network (TTN) [LoRa to Internet gateway](https://www.adafruit.com/product/4345).
 * An Internet router.
@@ -13,7 +13,7 @@ This project uses the follwoing hardware:
 * A free account with [TTN](https://www.thethingsnetwork.org).
   * Need to register your gateway with TTN.
   * Need to create an App in the TTN Console to recieve the data from your Spresense driven LoRa radio.
-* A free account with Mathworks on their [ThingsSpeak](https://thingspeak.com/) web service for publicly or privetly displaying data from your Spresense.
+* A free account with Mathworks on their [ThingsSpeak](https://thingspeak.com/) web service for publicly or privately displaying data from your Spresense.
 
 ![image](https://user-images.githubusercontent.com/92460732/208208272-942ef7dd-7aae-4485-bae2-505d226ac7a7.png)
 
@@ -35,5 +35,5 @@ This project uses the follwoing hardware:
 
 TODO:
 
-Put the Spresense into low power or sleep mode, waking up once an hour to x-mit a new value over LoRa.
-Depending on what enclosure is selected and what battery is selected consider using a SuperCap for added amps needed during a LoRa x-mission
+* Put the Spresense into low power or sleep mode, waking up once an hour to x-mit a new value over LoRa.
+* Depending on what enclosure is selected and what battery is selected consider using a [SuperCap](https://store.mcci.com/products/model-4906) for added amps needed during a LoRa x-mission
