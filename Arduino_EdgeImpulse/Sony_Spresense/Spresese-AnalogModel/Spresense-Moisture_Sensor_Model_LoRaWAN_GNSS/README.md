@@ -1,4 +1,4 @@
-An example senerio for this app would be to monitor soil moisture at various locations in a cherry orchard were power and internet connectivity is not avaliable.
+An example senerio for this app would be to monitor soil moisture at various locations in a cherry orchard were power and internet connectivity is not avaliable. The moisture data is displyed on a Dashboard [here](https://thingspeak.com/channels/1977008).
 
 This program is targeted to the Sony Spresense using the [Arduino](https://www.arduino.cc/) IDE for compilation. There are different INO files to make it easy to adapt this program for other uses. For example, if you don't want to use LoRaWAN, the delete files `Spresense-LMiC.h` and `Spresense-LMiC.ino` from the Arduino build folder.
 
