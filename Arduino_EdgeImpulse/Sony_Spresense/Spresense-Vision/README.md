@@ -1,0 +1,1 @@
+This folder holds Sony Spresense programs that have Edge Impulse machine learning (ML) capabilities. However, not all programs have ML capabilities but are proof of concept routines that eventually get embeded into ML programs.
