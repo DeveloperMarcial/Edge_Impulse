@@ -92,20 +92,19 @@
 
   **Seeing What the Classifier() Saw in a FOMO Model**
 
-  This program runs an EdgeImpulse (EI) FOMO Machine Learning (ML) model that is looking
-  to find one or more screws in a single image captured by a Sony Spresense Camera module
-  connected to a Sony Spresense Main board. When one or more FOMOed objects are found,
-  then a BMP is written to a SD card on the Sony Spresense Extension board with the
-  centroid of the predicated object location overlayed on the BMP in a rectangular black outline.
+  This program runs an EdgeImpulse (EI) FOMO Machine Learning (ML) model that is looking to find one or more screws
+  in a single image captured by a Sony Spresense Camera module connected to a Sony Spresense Main board.
+  When one or more FOMOed objects are found, then a BMP is written to a SD card on the Sony Spresense Extension board
+  with the centroid of the predicated object location overlayed on the BMP in a rectangular black outline.
   The size and location of the centroid rectangle is an output on the EdgeImpulse FOMO model inference routine.
   (Note: On Windows 10 the Microsoft Photos app displays the BMPs.
   On Ubuntu the Image View app will not display the BMPs and says the BMP header is corrupt.)
 
-  This program is intended to save the image that got FOMOed so that we can see where the
-  Classifier drew centroid of the bounding boxes. The code is optimized to save the images as grayscale BMPs
-  and does not handel color BMPs. If you want to save color BMPs, see this [code](http://need link)
-  that can handle grayscale and color BMPs but is more compilcated than it needs to be in that it
-  contains many compiler directives and additional code so that it can handle either case.
+  This program is intended to save the image that got FOMOed so that we can see where the Classifier drew
+  a centroid of the bounding boxes. The code is optimized to save the images as grayscale BMPs and does
+  not handle color BMPs. If you want to save color BMPs, see this [code](https://github.com/DeveloperMarcial/Edge_Impulse/tree/trunk/Arduino_EdgeImpulse/Sony_Spresense/Spresense-Vision/Spresense-CameraToSdCardAsBMP)
+  that can handle grayscale and color BMPs but is more compilcated than it needs to be in that it contains
+  many compiler directives and additional code so that it can handle either case.
 
 */
 
