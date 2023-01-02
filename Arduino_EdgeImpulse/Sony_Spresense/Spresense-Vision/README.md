@@ -4,5 +4,5 @@ This folder holds Sony Spresense programs that have Edge Impulse machine learnin
 | --- | --- | --- |
 |  Spresense-CameraToSdCardAsBMP | Program demonstrates how to save a FrameBuffer from a camera to a grayscale or color BMP.  | No |
 |  Spresense-VisionModel         | Program demonstrates running an Image Classification model.  | Yes |
-|  Spresense-VisionModel_SdCard  | Program demonstrates running an Image Segmentation model, aka FOMO model and then save the FOMOed imagewith an overlaied BB to SD card.  | Yes |
+|  Spresense-VisionModel_SdCard  | Program demonstrates running an Image Segmentation model, aka FOMO model and then saves the FOMOed image with an overlaided BB to SD card.  | Yes |
 |  README.md | This file.  | No |
