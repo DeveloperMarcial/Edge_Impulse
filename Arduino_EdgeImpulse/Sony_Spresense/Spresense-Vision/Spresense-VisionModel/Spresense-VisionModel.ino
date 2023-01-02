@@ -123,6 +123,9 @@
 //                      Change "<your_path>" depending on your system configuration                               //
 //                      Change "/dev/ttyUSB0" to serial port the Spresense connected to.                          //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  My Ardy Build Folder: C:\Users\mmarc\AppData\Local\Temp\arduino-sketch-FCC2488F5F48E4ED1B9D9484E3902BF5
+  
   Flash from Ubuntu:
       "<your_path>/.arduino15/packages/SPRESENSE/tools/spresense-tools/2.6.0/flash_writer/linux/flash_writer"
       -s -c
@@ -149,13 +152,13 @@
 #error "Core selection is wrong!! Must compile to MainCore!!!"
 #endif
 
-#define EI_CLASSIFIER_HAS_MODEL_VARIABLES       1
-#define EI_CLASSIFIER_INPUT_FRAMES              1
-#define EI_CLASSIFIER_INTERVAL_MS               1
-#define EI_CLASSIFIER_TFLITE_OUTPUT_DATA_TENSOR 1
-#define EI_CLASSIFIER_FULL_TFLITE               1
-#define EI_CLASSIFIER_OBJECT_DETECTION          0
-#include <Cup_inferencing.h>                // This is the float model exported from the Edge Impulse Studio as an Arduino library.
+///#define EI_CLASSIFIER_HAS_MODEL_VARIABLES       1
+///#define EI_CLASSIFIER_INPUT_FRAMES              1
+///#define EI_CLASSIFIER_INTERVAL_MS               1
+///#define EI_CLASSIFIER_TFLITE_OUTPUT_DATA_TENSOR 1 //0
+///#define EI_CLASSIFIER_FULL_TFLITE               1 //NA
+///#define EI_CLASSIFIER_OBJECT_DETECTION          0 //1
+#include <Cup_inferencing.h>                // Either int8 or float model exported from the Edge Impulse Studio as an Arduino library works.
 
 #include <Camera.h>                         // Sony's camera library.
 
@@ -219,7 +222,7 @@
 
 #define DEBUG_IT  false             // Enable for very verbose logging from Edge Impulse SDK.
                                     // Show features from raw data during the Classify().
-#define GRAYSCALE false
+#define GRAYSCALE true
 
 #define CLASSIFIER_THRESHOLD  0.7   // We will take an action, like saving a snapshot to a SD card
                                     // if the Prediction is above this value.
@@ -683,6 +686,15 @@ void camera_start_continuous(bool doPrintCamErr)
     printCamErr(err);
   }
 
+  /* Auto white balance configuration */
+  Serial.println("Set Auto white balance parameter...");
+  err = theCamera.setAutoWhiteBalanceMode(CAM_WHITE_BALANCE_DAYLIGHT);
+  if (err != CAM_ERR_SUCCESS)
+  {
+    printCamErr(err);
+  }
+  
+  /*
   // We are not taking snapshots but this is how to set it up.
   // Still image format must be JPEG to allow for compressed storage/transmit.
   //ei_printf("Set format:\n");
@@ -697,6 +709,7 @@ void camera_start_continuous(bool doPrintCamErr)
     ei_printf("ERR: Setting the image format failed. See theCamera.setStillPictureImageFormat())...\n");      
     printCamErr(err);
   }
+  */
 
   if (doPrintCamErr)
   {
