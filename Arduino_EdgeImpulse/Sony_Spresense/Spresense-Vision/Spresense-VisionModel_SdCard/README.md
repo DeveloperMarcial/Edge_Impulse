@@ -67,8 +67,21 @@ Being able to see were the *EdgeImpulse* Classifier() placed bounding boxes in a
 **_TODO_**      
 
 * Investigate the code differences between the *Arduino* Library and the *EdgeImpulse* Spresense Firmware to see why the *Arduino* implementation is not *reliably identifying* individuals screws in a single image.
+  * Running EdgeImpulse Spresense Firmware on a Vision Model works perfectly.
+  * Steps to reproduce this perfectness:
+    * Download this [code](https://github.com/edgeimpulse/firmware-sony-spresense) herein called EISFVM.
+    * Deploy the EdgeImpulse Studio C++ Vision Model Library and extract the files from the Zip file.
+      * Copy *3-folders* `edge-impulse-sdk`, `model-parameters`, and `tflite-model` into the EISFVM `edge_impulse` folder overwriting the existing folders.
+    * `cd EISFVM`
+      * `make -j`
+      * `make flash`
+      * run `edge-impulse-run-impulse --debug`
+      * Results: The realtime results printed to the screen show perfect performance, aka, finding one or more screws when one or more screws are present.
+   * Therefore, the issue lines within the EdgeImpulse Spresense Arduino implementation either in the EdgeImpulse Arduino deployed library or my implementation of the EdgeImpulse Arduino deployed library
 
 * Try running this Model on a different MCU, like an *Arduino* Portenta, to see how this particular FOMO model performs on device. (It may be that the *EI* model deployed MUST be a float model as was the case when I tested the *EdgeImpulse* Spresense Firmware and then went on and implemented an Arduino program running on a *Sony Spresense* using a a [keyphrase detection (float not an int8) Model](https://github.com/DeveloperMarcial/Edge_Impulse/tree/trunk/Arduino_EdgeImpulse/Sony_Spresense/Spresense-AudioModel/Code/Spresense-AudioModel).
+  * The EISFVM worked perfectly
+  * Need to create an Arduino program that implements the screws library to see if it reliably detects FOMOed screws.
 
 |Filename / Folder Name | Description |
 | --- | --- |
