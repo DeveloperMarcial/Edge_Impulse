@@ -158,7 +158,8 @@
 ///#define EI_CLASSIFIER_TFLITE_OUTPUT_DATA_TENSOR 1 //0
 ///#define EI_CLASSIFIER_FULL_TFLITE               1 //NA
 ///#define EI_CLASSIFIER_OBJECT_DETECTION          0 //1
-#include <Cup_inferencing.h>                // Either int8 or float model exported from the Edge Impulse Studio as an Arduino library works.
+//#include <Cup_inferencing.h>                // Either int8 or float model exported from the Edge Impulse Studio as an Arduino library works.
+#include <Spresense_FOMO_Screws_inferencing.h>
 
 #include <Camera.h>                         // Sony's camera library.
 

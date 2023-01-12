@@ -170,6 +170,7 @@
 //#include <FOMO_Washers_and_Screws_96x96_inferencing.h>    // This is the int8 model exported from the Edge Impulse Studio as an Arduino library.
 //#include <Spresense_FOMO_inferencing.h>
 #include <Spresense_FOMO_Screws_inferencing.h>
+#define EI_PORTING_SONY_SPRESENSE (1)
 
 #include <Camera.h>                                       // Sony's camera library. Note thats a capital C.
 #include <SDHCI.h>                                        // An SD card is required!
